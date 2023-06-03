@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table Example</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--this is the style part of the code-->
+  <style> 
+    body {
+      background-color: white;
+      color: black;
+      margin : 0;
+      font-family: 'Prompt', sans-serif;
+      font-weight: 300;
+    }
+    .form-control {
+      background-color:white;
+    }
+    h1 {
+      text-align: center;
+    }
+    .night-mode {
+      background-color: #243447;
+      color: white;
+    }
+    #night-mode-toggle{
+      position: absolute;
+      right: 0;
+    }
+    table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      font-size: 30px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+  
+</head>
+<body>
+  <!--This button changes the background of the website. Turning it into "Dark Mode" or "Light Mode"-->
+  <button type="button" class="btn btn-primary" id="night-mode-toggle"><span class="glyphicon glyphicon-adjust"> Turn on dark mode</span></button>
+<!--The div class for the form groups that takes the input from the user-->
+  <div class="container">
+    <h1>Multiplication Table</h1>
+    <div class="form-group">
+      <label for="num1">First number:</label>
+      <input type="number" class="form-control" id="num1">
+    </div>
+    <div class="form-group">
+      <label for="num2">Second number:</label>
+      <input type="number" class="form-control" id="num2">
+    </div>
+    <div class="form-group">
+      <!--The table limit is automatically set to 4, as stated. But, the value can still be changed by the user-->
+      <label for="tableLimit">Table limit:</label>
+      <input type="number" class="form-control" id="tableLimit" value="4">
+    </div>
+    <button type="button" class="btn btn-primary" id="calculate-btn">Show Table</button>
+    <table id="mult-table">
+    </table>
+    <button id="hideTableButton" class="btn btn-danger">Hide Table</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+  
+  <script>
+    
+    $(document).ready(function() { 
+      $('#calculate-btn').click(function() {
+        var num1 = $('#num1').val();
+        var num2 = $('#num2').val();
+        var tableLimit = $('#tableLimit').val();
+        var multTable = '';
+        for (var i = 1; i <= tableLimit; i++) {
+          multTable += '<tr>';
+          for (var j = num1; j <= num2; j++) {
+            multTable += '<td>' + j + ' x ' + i + ' = ' + (i * j) + '</td>';
+          }
+          multTable += '</tr>';
+        }
+        $('#mult-table').html(multTable);
+        $('#hideTableButton').fadeIn();
+        $('#calculate-btn').fadeOut();
+    
+      
+       
+      });
+    
+      $("#hideTableButton").click(function() {
+        $('#mult-table td').animate();
+        $('#mult-table').fadeOut(function() {
+          $(this).empty().show();
+        });
+        $('#calculate-btn').fadeIn();
+        $(this).fadeOut();
+      });
+    
+      $('#night-mode-toggle').click(function() {
+        $('body').toggleClass('night-mode');
+      });
+    });
+    
+  </script>
+
+  
+</html>

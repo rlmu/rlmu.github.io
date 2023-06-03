@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery HTML Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$("#text-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).text(content);
+			});
+			
+			$("#html-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).html(content);
+			});
+			
+			$("#val-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).val(content);
+			});
+			
+			$("#before-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).before(content);
+			});
+			
+			$("#after-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).after(content);
+			});
+			
+			$("#append-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).append(content);
+			});
+			
+			$("#prepend-btn").click(function() {
+				var selector = $("#selector").val();
+				var content = $("#content").val();
+				$(selector).prepend(content);
+			});
+			
+			$("#remove-btn").click(function() {
+				var selector = $("#selector").val();
+				$(selector).remove();
+				$("#selector").val('');
+			});
+			
+			$("#empty-btn").click(function() {
+				var selector = $("#selector").val();
+				$(selector).empty();
+			});
+			
+		});
+	</script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 24px;
+			padding: 20px;
+		}
+		
+		h1 {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+		
+		label {
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		
+		input[type="text"], button {
+			display: block;
+			margin-bottom: 10px;
+			width: 300px;
+		}
+
+		#container {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery HTML Example</h1>
+	
+	<label for="selector">Selector:</label>
+	<input type="text" id="selector" name="selector">
+	
+	<label for="content">Content:</label>
+	<input type="text" id="content" name="content">
+	
+	<button id="text-btn">Set Text</button>
+	<button id="html-btn">Set HTML</button>
+	<button id="val-btn">Set Value</button>
+	
+	<button id="before-btn">Add Before</button>
+	<button id="after-btn">Add After</button>
+	<button id="append-btn">Append</button>
+	<button id="prepend-btn">Prepend</button>
+	
+	<button id="remove-btn">Remove</button>
+	<button id="empty-btn">Empty</button>
+	
+	<div id="container">
+		<p>This is some sample text.</p>
+	</div>
+</body>
+</html>

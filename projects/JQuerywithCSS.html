@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Example</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		body {
+			text-align: center;
+		}
+		
+		#container {
+			width: 400px;
+			height: 400px;
+			background-color: yellow;
+			margin: 20px auto;
+			padding: 20px;
+			font-size: 32px;
+			font-family: sans-serif;
+		}
+		
+		select {
+			font-size: 16px;
+			margin-right: 10px;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			var fonts = ['Arial', 'Verdana', 'Helvetica', 'Times New Roman', 'Courier New', 'Georgia', 'Impact', 'Comic Sans MS'];
+			
+			
+			var fontSelect = $('#font-select');
+			$.each(fonts, function(index, font) {
+				fontSelect.append($('<option>').text(font).attr('value', font));
+			});
+			
+			$("#width-btn").click(function() {
+				var width = $("#width").val();
+				$("#container").width(width);
+			});
+			
+			$("#get-width-btn").click(function() {
+				var width = $("#container").width();
+				alert("Width: " + width);
+			});
+			
+			$("#height-btn").click(function() {
+				var height = $("#height").val();
+				$("#container").height(height);
+			});
+			
+			$("#get-height-btn").click(function() {
+				var height = $("#container").height();
+				alert("Height: " + height);
+			});
+			
+			$("#color-btn").click(function() {
+				var color = $("#color").val();
+				$("#container").css("background-color", color);
+			});
+			
+			$("#get-color-btn").click(function() {
+				var color = $("#container").css("background-color");
+				alert("Background Color: " + color);
+			});
+			
+			$("#font-btn").click(function() {
+				var font = $("#font-select").val();
+				$("#container").css("font-family", font);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery Example</h1>
+	
+	<label for="width">Width:</label>
+	<input type="text" id="width" name="width">
+	<button id="width-btn">Set Width</button>
+	<button id="get-width-btn">Get Width</button>
+	<br><br>
+	
+	<label for="height">Height:</label>
+	<input type="text" id="height" name="height">
+	<button id="height-btn">Set Height</button>
+	<button id="get-height-btn">Get Height</button>
+	<br><br>
+	
+	<label for="color">Background Color:</label>
+	<input type="text" id="color" name="color" value="#ffff00">
+	<button id="color-btn">Set Color</button>
+	<button id="get-color-btn">Get Color</button>
+	<br><br>
+	
+	<label for="font">Font:</label>
+	<select id="font-select">
+	</select>
+	<button id="font-btn">Change Font</button>
+	
+	<br><br>
+	
+	<div id="container">
+		Text is here 
+	</div>
+</body>
+</html>

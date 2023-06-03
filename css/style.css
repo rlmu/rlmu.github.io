@@ -1,0 +1,252 @@
+@import url(./fonts.css);
+
+@import url(part/varia.css);
+.header_area .main-menu .navbar .navbar-brand{
+    padding: 0 2rem 0 5rem;
+}
+@import url(./part/global.css);
+
+
+.header_area .main-menu .navbar{
+    position: relative;
+    padding: .5rem 10rem ;
+    padding-bottom: 4%;
+    display: flex;
+    padding-top: -5%;
+    
+}
+
+.header_area .main-menu .nav-item .nav-link{
+    font: normal 500 15px/2px var(--roboto);
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+    display: inline-block;
+    position: relative;
+}
+.header_area .main-menu .nav-item .nav-link::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #5c4fcd;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.header_area .main-menu .nav-item .nav-link:hover::after{
+    width: 100%;
+}
+
+.logo .img-fluid{
+    width: 50px;
+    cursor: pointer;
+}
+  
+
+.header_area .main-menu .navbar-nav .active .navbar-brand a{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.site-main .site-banner{
+background: url() no-repeat 0% 50%;
+}
+.site-main .site-banner .site-title h3{
+    padding-top: 35%;
+    font-weight: 500;
+}
+
+.text-box h2{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: var(--roboto);
+    color: black;
+    font-size: 4.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+.text-box h2 span{
+    color: #5c4fcd;
+}
+span{
+    color: #5c4fcd;
+}
+
+
+.img-fluid{
+    border-radius: 25px;
+    width: 10%;
+    height: 100%;
+    padding-left: 20px;
+}   
+.site-main .about-area{
+    padding: 5rem 7rem;
+    padding-top: 16%;
+    padding-bottom: 16%;
+}
+.site-main .about-area .about-title h2 >span{
+    
+    font:normal bold 49px/60px var(--roboto);
+    letter-spacing: 21px;
+}
+.site-main .about-area .about-title .paragraph > p{
+    width: 100%;
+}
+
+.portfolio-area .portfolio-title h1{
+    color: #5c4fcd;
+}
+
+
+.site-main .contact-area{
+    padding: 7rem 2rem;
+}
+.site-main .contact-area .contact-title{
+    padding: 0 14rem;
+}
+.site-main .contact-area .contact-title h1{
+    font-size: 30px;
+}
+.site-main > .contact-area .contact{
+    background-color: rgba(250, 252 , 253, 0.974);
+    padding: .4rem 0;
+    width: 16rem;
+    margin: 5rem .5rem;
+    transition: box-shadow .7s ease; 
+}
+
+
+.site-main .contact-area .contact:hover{
+    box-shadow: var(--box-shadow);
+}
+.site-main .contact-area .contact-title h1{
+    color: #5c4fcd;
+    font-family: var(--roboto);
+    
+}
+
+.contact_title{
+    text-align: left ;
+    color: #5c4fcd;
+}
+.site-main .portfolio-area{
+    padding: 4rem 0;
+}
+
+.site-main .portfolio-area .button-group button{
+    background: transparent;
+    border:none;
+    font: normal 500 16px/130px var(--space);
+    text-transform: uppercase;
+}
+
+.site-main .portfolio-area .button-group button + button{
+    padding-left: 2rem;
+}
+
+.site-main .portfolio-area .grid .my-portfolio > .title h4{
+    font: normal 700 25px/10px var(--space);
+}
+
+.site-main .portfolio-area .grid .my-portfolio .img a:hover img{
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
+}
+
+button:focus,
+button:active
+button:hover
+.btn:active,
+.btn:active{
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.img-fluid {
+    width: 400px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+    transition-delay: .5s;
+    border-radius: 70px;
+  }
+.img-fluid.fade-in  {
+opacity: 1;
+    
+}
+
+.text-line {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: dash 8s linear forwards infinite, filling 8s ease-in forwards infinite;
+    animation-delay: .5s;
+    font-size: 50px;
+    fill: transparent;
+  }
+  
+  .text-line text {
+    font-family: Orbitron,sans-serif;
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes filling {
+    40%, 60% { fill: rgba(147, 102, 225, 0.9); fill-opacity: 1; }
+    70%, 100% { fill: #5917e6; fill-opacity: 1; }
+  }
+
+  .contacts .link-unstyled {
+    color: inherit;
+    text-decoration: none;
+  }
+  .contacts .link-unstyled:hover {
+    color: inherit;
+  }
+  
+ 
+
+ .my-project .mult-table h2:hover::after{
+    width: 100%;
+}
+h2 ,h4{
+    color: #5c4fcd;
+}
+.tools-used .tool-title{
+    color: #5c4fcd;
+    text-align: center;
+}
+.tool {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .tool {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .tool-bar {
+    width: 100%;
+    background-color: #d4d3d3;
+    border-radius: 5px;
+    padding: 3px;
+    animation: progress 2s ease-in-out;
+  }
+
+  .tool-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5c4fcd;
+  }
